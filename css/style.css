@@ -94,6 +94,7 @@
     height: 48px;
     border-radius: 50%;
     object-fit: cover;
+    aspect-ratio: 1/1; /* Ensure perfect circle */
     border: 2px solid var(--primary);
   }
   
@@ -285,18 +286,16 @@
   
   /* Soft skills special styling */
   .skill-category:last-child .skill-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    display: block;
   }
   
   .skill-category:last-child .skill-item {
+    display: inline-block; /* Instead of relying on flex */
     background: var(--primary);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    margin-bottom: 0.5rem;
-    width: auto;
+    margin: 0 0.5rem 0.5rem 0; /* More consistent spacing */
   }
   
   .skill-category:last-child .skill-name {
@@ -396,6 +395,14 @@
     .skill-bar {
       margin-left: 0;
     }
+    .profile-image {
+      width: 48px;
+      height: 48px; /* Ensure equal width and height */
+      min-width: 48px; /* Prevent shrinking */
+      min-height: 48px; /* Prevent shrinking */
+      border-radius: 50%; /* Maintain circular shape */
+    }
+    
   }
   
   @media (max-width: 480px) {
