@@ -1,31 +1,31 @@
-<h2>Curriculum Vitae</h2>
-<div class="cv-content">
-    <p>Download my complete CV by clicking the button below:</p>
+<h2 id="cv-heading">CV</h2>
+<div class="cv-content" id="cv-content">
+    <p id="cv-intro">Download my complete CV by clicking the button below:</p>
 
-    <div class="cv-download">
-        <a href="assets/docs/cv.pdf" class="download-button" download>
-            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF icon" width="15">
+    <div class="cv-download" id="cv-download-container">
+        <a href="assets/docs/cv.pdf" class="download-button" id="cv-download-button" data-track="cv-download" download>
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF icon" width="15" id="pdf-icon">
             Download CV (PDF)
         </a>
     </div>
 
-    <div class="cv-preview">
-        <section>
-            <h3>Summary</h3>
-            <p>An ambitious student with strong communication and interpersonal skills, aiming to contribute effectively in a professional role. Experienced in programming and quick to learn product details. Proven ability to foster positive customer interactions.</p>
+    <div class="cv-preview" id="cv-preview">
+        <section id="cv-summary" data-track="cv-section-summary">
+            <h3 id="summary-heading">Summary</h3>
+            <p id="summary-content">An ambitious student with strong communication and interpersonal skills, aiming to contribute effectively in a professional role. Experienced in programming and quick to learn product details. Proven ability to foster positive customer interactions.</p>
         </section>
-        <section>
-            <h3>Projects</h3>
-            <ul>
-                <li>Train Location Monitoring and Collision Avoidance Systemusing GPS and RFID</li>
+        <section id="cv-projects" data-track="cv-section-projects">
+            <h3 id="projects-heading">Projects</h3>
+            <ul role="list" aria-label="Projects List">
+                <li data-track="project-train">Train Location Monitoring and Collision Avoidance System using GPS and RFID</li>
             </ul>
         </section>
 
-        <section>
-            <h3>Languages</h3>
-            <ul>
-                <li><strong>Hindi:</strong> Native</li>
-                <li><strong>English:</strong> Intermediate</li>
+        <section id="cv-languages" data-track="cv-section-languages">
+            <h3 id="languages-heading">Languages</h3>
+            <ul role="list" aria-label="Languages List">
+                <li data-track="language-hindi"><strong>Hindi:</strong> Native</li>
+                <li data-track="language-english"><strong>English:</strong> Intermediate</li>
             </ul>
         </section>
     </div>

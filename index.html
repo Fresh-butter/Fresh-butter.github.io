@@ -8,53 +8,53 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="profile-info">
-                <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-image">
-                <div class="name-title">
+        <div class="container" id="header-container">
+            <div class="profile-info" id="profile-info">
+                <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-image" id="profile-image">
+                <div class="name-title" id="website-title">
                     <h1>Navneet's Personal Website</h1>
                 </div>
             </div>
-            <nav>
+            <nav id="main-navigation" aria-label="Main Navigation">
                 <ul>
-                    <li><a href="#about" class="active">About</a></li>
-                    <li><a href="#birthplace">Birthplace</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#about" class="active" data-track="nav-about">About</a></li>
+                    <li><a href="#birthplace" data-track="nav-birthplace">Birthplace</a></li>
+                    <li><a href="#education" data-track="nav-education">Education</a></li>
+                    <li><a href="#skills" data-track="nav-skills">Skills</a></li>
+                    <li><a href="#cv" data-track="nav-cv">CV</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <section id="about" class="section active">
+        <section id="about" class="section active" data-section-name="About Me">
             <!-- About content from about.html -->
         </section>
 
-        <section id="birthplace" class="section">
+        <section id="birthplace" class="section" data-section-name="Birthplace">
             <!-- Birthplace content from birthplace.html -->
         </section>
 
-        <section id="education" class="section">
+        <section id="education" class="section" data-section-name="Education">
             <!-- Education content from education.html -->
         </section>
 
-        <section id="skills" class="section">
+        <section id="skills" class="section" data-section-name="Skills">
             <!-- Skills content from skills.html -->
         </section>
 
-        <section id="cv" class="section">
+        <section id="cv" class="section" data-section-name="CV">
             <!-- CV content from cv.html -->
         </section>
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container" id="footer-container">
             <p>&copy; 2025 Navneet • Built with AI + Imagination</p>
         </div>
     </footer>
-
     <script src="js/main.js"></script>
+    <script src="js/tracker.js"></script>
 </body>
 </html>
