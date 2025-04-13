@@ -1,20 +1,55 @@
+/**
+ * tracker.js - User interaction tracking script
+ * Captures all click events and page views performed by a user across HTML tags and CSS objects.
+ * Logs events to console in format: Timestamp, event type (click/view), event object (description)
+ */
+
 // Function to log events
 function logEvent(eventType, objectType, description) {
-    const timestamp = new Date().toISOString();
+    const timestamp = new Date().toLocaleString();
     console.log(`${timestamp}, ${eventType}, ${objectType}${description ? ' (' + description + ')' : ''}`);
 }
 
 // Function to get the type of element
 function getElementType(element) {
-    if (element.tagName === 'A') return 'hyperlink';
-    if (element.tagName === 'IMG') return 'image';
-    if (element.tagName === 'BUTTON') return 'button';
-    if (element.tagName === 'INPUT') return `input-${element.type}`;
-    if (element.classList.contains('skill-item')) return 'skill';
-    if (element.classList.contains('education-item')) return 'education';
-    if (element.classList.contains('gallery-item')) return 'gallery-image';
+    // Special handling for input elements
+    if (element.tagName === 'INPUT') {
+        return `input-${element.type || 'text'}`;
+    }
+
+    // Check for custom classes specific to your website
+    const customClasses = {
+        'skill-item': 'skill',
+        'education-item': 'education',
+        'gallery-item': 'gallery-image',
+        'skill-bar': 'skill-progress-bar',
+        'skill-level': 'skill-indicator',
+    };
+
+    for (const [className, type] of Object.entries(customClasses)) {
+        if (element.classList.contains(className)) {
+            return type;
+        }
+    }
+
+    // Check for ARIA roles
+    const role = element.getAttribute('role');
+    if (role) {
+        return role;
+    }
+
+    if(element.tagName === 'A') {
+        return 'hyperlink';
+    }
+    if(element.tagName === 'IMG') {
+        return 'image';
+    }
+
+
+    // Default to lowercase tag name
     return element.tagName.toLowerCase();
 }
+
 
 // Improved function to get element description
 function getElementDescription(element) {
@@ -89,9 +124,4 @@ document.addEventListener('DOMContentLoaded', function() {
     if (activeSection && activeSection.id) {
         trackSectionView(activeSection.id);
     }
-});
-
-// Track when user leaves the page
-window.addEventListener('beforeunload', function() {
-    logEvent('view', 'page-exit', document.title);
 });
