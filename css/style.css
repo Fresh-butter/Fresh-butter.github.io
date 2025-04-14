@@ -311,7 +311,7 @@
     margin: 2rem 0;
   }
   
-  .download-button {
+  .button {
     display: inline-flex;
     align-items: center;
     background: var(--primary);
@@ -323,7 +323,7 @@
     transition: var(--transition);
   }
   
-  .download-button:hover {
+  .button:hover {
     background: var(--accent);
     transform: translateY(-2px);
     color: white;
@@ -337,6 +337,119 @@
     padding: 1.5rem;
     border-radius: var(--radius);
   }
+
+    /* Text Analyzer Section */
+  .text-analyzer-container {
+    background: var(--card);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .text-input-area {
+    margin-bottom: 2rem;
+  }
+
+  .text-input-area p {
+    color: var(--light-text);
+    margin-bottom: 0.5rem;
+  }
+
+  #text-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius);
+    resize: vertical;
+    min-height: 200px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+  }
+
+  #text-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(58, 110, 165, 0.1);
+  }
+
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .analysis-results {
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .result-section {
+    background: rgba(58, 110, 165, 0.03);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .stats-item {
+    background: var(--card);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .stats-value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .stats-label {
+    color: var(--light-text);
+    font-size: 0.9rem;
+  }
+
+  .stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  .stats-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .stats-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .stats-table td:first-child {
+    font-weight: 500;
+  }
+
+  .stats-table td:nth-child(2) {
+    color: var(--primary);
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .no-results {
+    color: var(--light-text);
+    text-align: center;
+    padding: 1rem;
+  }
+
   
   /* Footer */
   footer {

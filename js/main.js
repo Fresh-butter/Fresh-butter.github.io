@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadSectionContent('education');
     loadSectionContent('skills');
     loadSectionContent('cv');
+    loadSectionContent('text-analyzer');
     
     // Add click event listeners to navigation links
     const navLinks = document.querySelectorAll('nav ul li a');
